@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>docket</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+			<img class="logo" src="assets/logo4k.svg" alt="">
+			<div id="tooltip" class="visible tooltip">
+				<img src="assets/outline-check_circle-24px.svg" alt="">
+				<div></div>
+				<p>Candidatura enviada com sucesso!</p>
+			</div>	
+		</header>
+
+		<main>
+			<section class="info">
+				<div class="padding">
+					<h1>Venha trabalhar na Docket</h1>
+					<p>Preencha o formulário abaixo e venha trabalhar em uma das startups mais desejadas do Brasil!</p>
+					<h6>Dados pessoais</h6>
+					<form id="json" onsubmit="getDataBtn(); tooltipMenssge(); return false;">
+						<div>
+							<p class="asterisk">*</p>
+							<p>Nome completo:</p>
+						</div>
+						<input class="witdh padding-bottom" id="name" type="text" name="name" pattern="^\D{2,}\s[\D\s]{2,}$" placeholder="seunome" oninvalid="invalidName()" required>
+						<p id="nameMessage" class="message" hidden>Mensagem de feedback</p>
+						<div>
+							<p class="asterisk">*</p>
+							<p>E-mail:</p>
+						</div>
+						<input class="witdh padding-bottom" name="email" type="email" id="email" placeholder="seunome@sobrenome.com.br" oninvalid="invalidEmail()" required>
+						<p id="emailMessage" class="message" hidden>Mensagem de feedback</p>
+						<div class="wrap">
+							<div id="tel" class="padding-bottom tel-padding">
+								<p><b class="asterisk">*</b>Telefone 1:</p>
+								<input type="text" id="tel1" placeholder="(88) 8888-8888" oninvalid="invalidTel()" required>
+								<p id="telMessage" class="message" hidden>Mensagem de feedback</p>
+							</div>
+							<div>
+								<p>Telefone 2:</p>
+								<input type="text" id="tel2" placeholder="(88) 8888-8888" oninvalid="invalidTel()">
+								<p id="telMessage" class="message" hidden>Mensagem de feedback</p>
+							</div>
+						</div>
+						<input class="submit" type="submit" value="Enviar" />
+					</form>
+				</div>
+			</section>
+
+			<section class="result">
+				<div class="rectangle"></div>
+				<di class="padding-left">
+					<div>
+						<h1>Ficha do candidato</h1>
+						<p class="beforeresult" id="resultName">Preencha o formulário e clique em "Enviar" após conferir atentamente.</p>
+					</div>
+					<!-- <div>
+						<p class="regular">Nome completo:</p>
+						<p class="semibold">João Henrique Silva e Souza</p>
+						<p class="regular">E-mail:</p>
+						<p class="semibold">joaohenriquesilva@meuemail.com.br</p>
+						<p class="regular">Telefone 1:</p>
+						<p class="semibold">(11) 98756-0055</p>
+						<p class="regular">Telefone 2:</p>
+						<p class="semibold-color">Não informado</p>
+					</div> -->
+					<!-- <div class="project">
+						<h6>Seus projetos:</h6>
+						<ul class="row slider">
+							<button class="triangle"></button>
+							<li>
+								<img class ="first-img" srcset="
+								assets/0-5616x3744.png 1x, 
+  							assets/0-5616x3744@2x.png 2x
+							" alt="…">
+							</li>
+							<li>
+								<img class ="second-img" srcset="
+								assets/1001-5616x3744.png 1x, 
+								assets/1001-5616x3744@2x.png 2x
+							" alt="…">
+							</li>
+							<button class="triangle"></button>
+						</ul>
+					</div> -->
+					<div class="carousel">
+						<h6>Seus projetos:</h6>
+							<div class="carousel-content">
+								<img src="assets/0-5616x3744.png">
+								<img src="assets/1001-5616x3744.png">
+								<img src="assets/0-5616x3744.png">
+								<img src="assets/1001-5616x3744.png">
+								<img src="assets/0-5616x3744.png">
+								<img src="assets/1001-5616x3744.png">
+							</div>
+						<div class="navigation">
+							<div class="previous arrow-left"></div>
+							<div class="next arrow-right"></div>
+						</div>
+					</div>
+				</di>
+			</section>
+		</main>
+
+		<footer>
+			<p class="copyright">DOCKET &copy; 2019</p>
+		</footer>
+	</body>
+	<script src="js/script.js"></script>
+</html>
