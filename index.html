@@ -1,119 +1,347 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
-		<title>docket</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Fomenta Vale</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-	</head>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="animation/animation.css" />
+  </head>
 
-	<body>
-		<header>
-			<img class="logo" src="assets/logo4k.svg" alt="">
-			<div id="tooltip" class="visible tooltip">
-				<img src="assets/outline-check_circle-24px.svg" alt="">
-				<div></div>
-				<p>Candidatura enviada com sucesso!</p>
-			</div>	
-		</header>
+  <body>
+    <header>
+      <img class="logo" src="assets/logo.svg" alt="" />
+      <div class="headerMenu">
+        <p>Quem somos</p>
+        <p>O que fazemos</p>
+        <p>O que fazemos</p>
+        <p>Apoiadores</p>
+        <p class="orange">Faça Parte</p>
+      </div>
+      <!-- <div class="retangleTop"></div> -->
+    </header>
 
-		<main>
-			<section class="info">
-				<div class="padding">
-					<h1>Venha trabalhar na Docket</h1>
-					<p>Preencha o formulário abaixo e venha trabalhar em uma das startups mais desejadas do Brasil!</p>
-					<h6>Dados pessoais</h6>
-					<form id="json" onsubmit="getDataBtn(); tooltipMenssge(); return false;">
-						<div>
-							<p class="asterisk">*</p>
-							<p>Nome completo:</p>
-						</div>
-						<input class="witdh padding-bottom" id="name" type="text" name="name" pattern="^\D{2,}\s[\D\s]{2,}$" placeholder="seunome" oninvalid="invalidName()" required>
-						<p id="nameMessage" class="message" hidden>Mensagem de feedback</p>
-						<div>
-							<p class="asterisk">*</p>
-							<p>E-mail:</p>
-						</div>
-						<input class="witdh padding-bottom" name="email" type="email" id="email" placeholder="seunome@sobrenome.com.br" oninvalid="invalidEmail()" required>
-						<p id="emailMessage" class="message" hidden>Mensagem de feedback</p>
-						<div class="wrap">
-							<div id="tel" class="padding-bottom tel-padding">
-								<p><b class="asterisk">*</b>Telefone 1:</p>
-								<input type="text" id="tel1" placeholder="(88) 8888-8888" oninvalid="invalidTel()" required>
-								<p id="telMessage" class="message" hidden>Mensagem de feedback</p>
-							</div>
-							<div>
-								<p>Telefone 2:</p>
-								<input type="text" id="tel2" placeholder="(88) 8888-8888" oninvalid="invalidTel()">
-								<p id="telMessage" class="message" hidden>Mensagem de feedback</p>
-							</div>
-						</div>
-						<input class="submit" type="submit" value="Enviar" />
-					</form>
-				</div>
-			</section>
+    <section class="sectionTop">
+      <img src="assets/group.png" alt="" />
+      <div class="sectionTopText">
+        <p>
+					Fomenta Vale é uma associação civil, sem fins lucrativos, com o 
+					propósito de fomentar o desenvolvimento regional, transformando 
+					ideias em projetos e negócios com a integração de tecnologia, 
+					educação e empresas na região do Vale Paranapanema
+        </p>
+        <h2 class="tracking-in-expand">NOSSO VALE É UM AMBIENTE FÉRTIL DE OPORTUNIDADES.</h2>
+        <p>
+					Concentramos mais de 20 mil matriculados nas diversas faculdades e 
+					universidades. Apesar desse número expressivo de alunos, a região 
+					apresenta dificuldades para a criação de novas empresas, sobretudo 
+					de inovação, e retém poucos talentos que, geralmente, vão para grandes 
+					centros.
+          <br />
+          <br />
+					A Fomenta Vale preenche a lacuna existente entre o ensino e a prática, 
+					fomentando e compartilhando o desenvolvimento de uma cultura de 
+					empreendedorismo.
+        </p>
+      </div>
+      <div class="rectangle"></div>
+    </section>
 
-			<section class="result">
-				<div class="rectangle"></div>
-				<di class="padding-left">
-					<div>
-						<h1>Ficha do candidato</h1>
-						<p class="beforeresult" id="resultName">Preencha o formulário e clique em "Enviar" após conferir atentamente.</p>
-					</div>
-					<!-- <div>
-						<p class="regular">Nome completo:</p>
-						<p class="semibold">João Henrique Silva e Souza</p>
-						<p class="regular">E-mail:</p>
-						<p class="semibold">joaohenriquesilva@meuemail.com.br</p>
-						<p class="regular">Telefone 1:</p>
-						<p class="semibold">(11) 98756-0055</p>
-						<p class="regular">Telefone 2:</p>
-						<p class="semibold-color">Não informado</p>
-					</div> -->
-					<!-- <div class="project">
-						<h6>Seus projetos:</h6>
-						<ul class="row slider">
-							<button class="triangle"></button>
-							<li>
-								<img class ="first-img" srcset="
-								assets/0-5616x3744.png 1x, 
-  							assets/0-5616x3744@2x.png 2x
-							" alt="…">
-							</li>
-							<li>
-								<img class ="second-img" srcset="
-								assets/1001-5616x3744.png 1x, 
-								assets/1001-5616x3744@2x.png 2x
-							" alt="…">
-							</li>
-							<button class="triangle"></button>
-						</ul>
-					</div> -->
-					<div class="carousel">
-						<h6>Seus projetos:</h6>
-							<div class="carousel-content">
-								<img src="assets/0-5616x3744.png">
-								<img src="assets/1001-5616x3744.png">
-								<img src="assets/0-5616x3744.png">
-								<img src="assets/1001-5616x3744.png">
-								<img src="assets/0-5616x3744.png">
-								<img src="assets/1001-5616x3744.png">
-							</div>
-						<div class="navigation">
-							<div class="previous arrow-left"></div>
-							<div class="next arrow-right"></div>
-						</div>
-					</div>
-				</di>
-			</section>
-		</main>
+    <section class="sectionWhat">
+      <div>
+        <h1>O que Fazemos</h1>
+      </div>
+      <div class="sectionWhatNumbers">
+        <div>
+          <h1>01.</h1>
+          <h3 class="green">Incubação, Hackathons, Pitchs, Oficinas, Cursos e Palestras</h3>
+          <p>
+						Mindset, Design Thinking, Lean Canvas, Plano de Negócios, Prototipagem 
+						de Ideias, Pivotagem, Gestão de Projetos, Empreendedorismo e Inovação, 
+						Marketing para Empreendedores, Planejamento de Marketing, Prospecção 
+						Tecnológica, Desenvolvimento de Produtos, Gestão Estratégica, MCP, 
+						Tecnologia Aplicada a Negócios, Questões Jurídicas, Propriedade 
+						Intelectual, Apresentação de Projetos e Avaliação, Trends etc.
+          </p>
+        </div>
+        <div>
+          <h1>02.</h1>
+          <h3 class="blue">Mentoria de Projetos e Participação Em Eventos</h3>
+          <p>
+						Escola de Inovadores, Walking Together, Startup Weekend, Rodada de 
+						Negócios, Bootcamps, Meetups, além de divulgação da marca corporativa 
+						em todos os eventos.
+          </p>
+        </div>
+        <div>
+          <h1>03.</h1>
+          <h3 class="pink">Participação Em Viagens e Excursões para Eventos Consagrados</h3>
+          <p>
+						Envolvimento com as principais pautas do mundo do empreendedorismo, 
+						promovendo oxigenação do conhecimento e networking, para o corpo 
+						técnico das empresas envolvidas.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<footer>
-			<p class="copyright">DOCKET &copy; 2019</p>
-		</footer>
-	</body>
-	<script src="js/script.js"></script>
+    <section class="history">
+      <div class="historyText">
+        <h2>Nossa historia</h2>
+        <p>
+					Grandes nomes e empresas já fazem parte deste movimento e você também 
+					pode fazer parte da principal iniciativa para geração, desenvolvimento 
+					de talentos, oportunidades e negócios no Vale do Paranapanema.
+        </p>
+				<p id="show" class="moreHistoryButton" onclick="show()">
+					Mais sobre os idealizadores
+				</p>
+      </div>
+      <div class="historyFounder">
+        <img src="assets/parede.jpg" alt="" />
+        <!-- <p><b>Tiziano</b></p>
+				<p>Pravato</p>
+				<p><b>Fabio</b></p>
+				<p>de Rezende Barbosa</p>
+				<p><b>Felipe</b></p>
+				<p>Pescada</p>
+				<p><b>Gerson</b></p>
+				<p>Conte Filho</p> -->
+      </div>
+    </section>
+
+    <section id="moreHistory" class="moreHistory">
+      <div>
+        <h2>Nossa historia</h2>
+        <p>
+					Grandes nomes e empresas já fazem parte deste movimento e você também 
+					pode fazer parte da principal iniciativa para geração, desenvolvimento 
+					de talentos, oportunidades e negócios no Vale do Paranapanema.
+        </p>
+      </div>
+    </section>
+
+    <section class="founderLogo">
+      <img src="assets/founder/leveros.png" alt="" />
+      <img src="assets/founder/novaamerica.png" alt="" />
+      <img src="assets/founder/almeida.png" alt="" />
+      <img src="assets/founder/conti.png" alt="" />
+    </section>
+
+    <section class="program">
+      <div>
+        <h2>Nossos programas</h2>
+        <p>
+					Conheça os nossos programas de seleção de projetos, idéias e 
+					empreendedores e saiba como fazer parte dos programas.
+        </p>
+      </div>
+      <div>
+        <div class="programBox">
+          <div>
+            <img src="assets/programa1.png" alt="" />
+            <div class="programInsideBox">
+              <p>
+								‘‘O programa de pré-incubação é inteiramente gratuito e tem como 
+								principal objetivo auxiliar os novos empreendedores e projetos 
+								a se estruturar e iniciar os negócios. O contrato do programa 
+								garante o sigilo e a exclusividade que o empreendedor possui 
+								sobre a sua ideia.’’
+              </p>
+              <div>
+                <span><b>Programa de pré-incubação</b></span>
+                <span>Fomenta Vale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="programBox">
+          <div>
+            <img src="assets/programa1.png" alt="" />
+            <div class="programInsideBox">
+              <p>
+								‘‘O programa de Incubação é inteiramente gratuito e tem como 
+								principal objetivo auxiliar empreendedores e projetos já 
+								estruturados e gerir os negócios. O contrato do programa garante 
+								o sigilo e a exclusividade que o empreendedor possui sobre a sua 
+								ideia.’’
+              </p>
+              <div>
+                <span><b>Programa de incubação</b></span>
+                <span>Fomenta Vale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mentors">
+      <h2>Mentores</h2>
+      <p>
+        Conheça nossos mentores. Confira aqui a lista completa dos nosso time de mentores.
+      </p>
+      <div id="btndiv">
+        <button class="btn active" onclick="technology()">Tecnologia</button>
+        <button class="btn" onclick="agribusiness()">Agronegócio</button>
+        <button class="btn" onclick="health()">Saúde</button>
+        <button class="btn" onclick="business()">Negócios</button>
+      </div>
+      <div id="technology">
+        <div class="person">
+          <img src="assets/tech.png" alt="" />
+          <div>
+            <span><b>Mentor de Tecnologia</b></span>
+            <span>co-fundador do Google</span>
+          </div>
+        </div>
+      </div>
+      <div id="agribusiness">
+        <div class="person">
+          <img src="assets/agro.png" alt="" />
+          <div>
+            <span><b>Mentor de Agronegócio</b></span>
+            <span>co-fundador do Google</span>
+          </div>
+        </div>
+      </div>
+      <div id="health">
+        <div class="person">
+          <img src="assets/health.png" alt="" />
+          <div>
+            <span><b>Mentor de Saúde</b></span>
+            <span>co-fundador do Google</span>
+          </div>
+        </div>
+      </div>
+      <div id="business">
+        <div class="person">
+          <img src="assets/business.png" alt="" />
+          <div>
+            <span><b>Mentor de Negócios</b></span>
+            <span>co-fundador do Google</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coffee">
+      <div>
+        <h2>Café na Fomenta</h2>
+        <p>
+					If you area a person who enjoys photography, then I highly recommend 
+					that you check out my Instagram. I’m an avid traveller and I capture 
+					the best moments that I would love to cherish with the world
+        </p>
+        <p class="moreCoffee">Siga-nos no Spotify</p>
+      </div>
+      <div class="backCoffee">
+        <img src="assets/coffee.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="cast">
+      <div class="backCast">
+        <img src="assets/cast.jpg" alt="" />
+      </div>
+      <div>
+        <h2>FomentaCast</h2>
+        <p>
+					If you area a person who enjoys photography, then I highly recommend 
+					that you check out my Instagram. I’m an avid traveller and I capture 
+					the best moments that I would love to cherish with the world
+        </p>
+        <p class="moreCast">Siga-nos no Spotify</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contactText">
+        <h2>Faça parte, Vamos começar</h2>
+        <p>
+					Agora que você sabe muito sobre a fomenta, deixe-me saber se você tem 
+					interesse em nós.
+        </p>
+      </div>
+      <div class="contactForm">
+        <form method="POST" action="">
+          <div>
+            <p><b class="asterisk">*</b>Nome completo:</p>
+          </div>
+					<input 
+						name="name" 
+						type="text"
+						pattern="^\D{2,}\s[\D\s]{2,}$"
+						title="Digite seu nome completo"
+						placeholder="Nome completo"
+						required
+					/>
+          <div>
+            <p><b class="asterisk">*</b>E-mail:</p>
+          </div>
+					<input 
+						name="email"
+						type="email"
+						title="Digite um email válido"
+						placeholder="E-mail"
+						required
+					/>
+          <div>
+            <p><b class="asterisk">*</b>Assunto:</p>
+          </div>
+					<input 
+						name="subject"
+						type="text"
+						title="Digite um assunto válido"
+						placeholder="Assunto"
+						required
+					/>
+          <div>
+            <p><b class="asterisk">*</b>Mensagem:</p>
+          </div>
+					<input 
+						name="message"
+						type="text"
+						title="Digite uma mensagem válida"
+						placeholder="Message"
+						required
+					/>
+					<input 
+						name="redirectTo"
+						type="hidden"
+						value="https://wwww.google.com.br"
+					/>
+          <br />
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </section>
+
+    <main></main>
+
+    <footer>
+      <div class="address">
+        <span>Avenida Nove de Julho, 9</span>
+        <span>Centro - Assis/SP</span>
+        <span>administrativo@fomentavale.com.br</span>
+      </div>
+      <div>
+        <div class="social">
+          <a href="https://www.facebook.com/fomentavale"><img class="hvr-grow" src="assets/Facebook.svg" alt="" /></a>
+          <a href="https://www.linkedin.com/company/fomenta-vale"><img class="hvr-grow" src="assets/Linkedin.svg" alt="" /></a>
+
+          <a href="https://www.instagram.com/fomentavaleoficial"><img class="hvr-grow" src="assets/Instagram.svg" alt="" /></a>
+        </div>
+        <h1>Feito com 🧡 por Fomenta Vale.</h1>
+      </div>
+      <div>
+        <img src="assets/logofomenta.png" />
+      </div>
+    </footer>
+  </body>
+  <script src="js/script.js"></script>
 </html>
