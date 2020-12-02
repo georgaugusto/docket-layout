@@ -83,7 +83,7 @@ header {
 
 .rectangle {
   position: absolute;
-  width: 900px;
+  width: 60%;
   height: 870px;
   /* left: 540px; */
   right: 0px;
